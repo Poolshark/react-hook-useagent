@@ -1,4 +1,14 @@
-export type Browsers = "Chrome" | "Chromium" | "Firefox" | "Seamonkey" | "Opera15+" | "Opera12-" | "Safari" | "unknown";
+import { useUserAgent } from ".";
+
+export type Browsers =
+  | "Chrome"
+  | "Chromium"
+  | "Firefox"
+  | "Seamonkey"
+  | "Opera15+"
+  | "Opera12-"
+  | "Safari"
+  | "unknown";
 
 export type Agent = {
   device?: {

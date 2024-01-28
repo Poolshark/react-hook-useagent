@@ -6,8 +6,13 @@
     "name": "Flo Ragossnig",
     "email": "florian.ragossnig@me.com"
   },
-  "repository": "",
-  "module": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Poolshark/react-hook-useagent.git"
+  },
+  "module": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "keywords": [
     "react",
@@ -20,7 +25,8 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "rimraf": "^5.0.5"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
@@ -28,5 +34,14 @@
   "dependencies": {
     "@types/react": "^18.2.48",
     "react": "^18.2.0"
-  }
+  },
+  "scripts": {
+    "build": "bun build --target=node ./src/index.ts --outfile=dist/index.js && bun run build:declaration",
+    "build:declaration": "tsc --emitDeclarationOnly --project tsconfig.types.json",
+    "postbuild": "rimraf tsconfig.types.tsbuildinfo"
+  },
+  "files": [
+    "dist/*.js",
+    "dist/*.d.ts"
+  ]
 }

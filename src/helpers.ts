@@ -1,5 +1,16 @@
 import type { Browsers } from "./types";
 
+/**
+ * -----------------------------------------------------------
+ *  Detect Browser
+ * -----------------------------------------------------------
+ * Detects the browser and returns an object with the current
+ * browser and version.
+ *
+ * @param navigator The window.navigator object
+ * @returns         The browser object
+ * -----------------------------------------------------------
+ */
 export const detectBrowser = (navigator: Navigator) => {
   const browserRegexes = new Map<Browsers, RegExp>([
     ["Chrome", /Chrome\/([0-9.]+)/],
@@ -37,6 +48,17 @@ export const detectBrowser = (navigator: Navigator) => {
   }
 };
 
+/**
+ * -----------------------------------------------------------
+ *  Detect Rendering Engine
+ * -----------------------------------------------------------
+ * Detects the renbdering engine and returns an object with the
+ * current rendering engine and version.
+ *
+ * @param navigator The window.navigator object
+ * @returns         The rendering engine object
+ * -----------------------------------------------------------
+ */
 export const detectRenderingEngine = (navigator: Navigator) => {
   const renderingEngineRegexes = new Map([
     ["Blink", /Chrome\/([0-9.]+)/],
@@ -58,6 +80,18 @@ export const detectRenderingEngine = (navigator: Navigator) => {
   }
 };
 
+/**
+ * -----------------------------------------------------------
+ *  Detect Device
+ * -----------------------------------------------------------
+ * Detects the if the user is using a mobile or desktop device
+ * and returns an object with the current platform, device and
+ * mobile flag.
+ *
+ * @param navigator The window.navigator object
+ * @returns         The device object
+ * -----------------------------------------------------------
+ */
 export const detectDevice = (navigator: Navigator) => {
   const mobileRegexes = new Map([
     ["Android", /Android/i],

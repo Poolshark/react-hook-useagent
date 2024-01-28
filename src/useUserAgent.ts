@@ -2,17 +2,18 @@ import { useEffect, useState } from "react";
 import { detectDevice, detectRenderingEngine, detectBrowser } from "./helpers";
 
 import type { Agent } from "./types";
-// Browser → Name and Version
-// Rendedring Engine
 
 /**
  * -----------------------------------------------------------
  *  Use User Agent
  * -----------------------------------------------------------
- * @todo - write a description! Don't be lazy!
+ * Detects the user agent and returns an object with the current
+ * `device`, the `browser` and the `renderingEngine` the user is
+ * using.
  *
- * @param params  The input params.
- * @returns       @todo - add return
+ * *Type*: React Hook
+ *
+ * @returns The user agent object
  * -----------------------------------------------------------
  */
 export const useUserAgent = () => {

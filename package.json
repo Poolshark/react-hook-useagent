@@ -1,6 +1,6 @@
 {
   "name": "react-hook-useagent",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A react hook which provides a simple way to get the user agent of the browser",
   "author": {
     "name": "Flo Ragossnig",

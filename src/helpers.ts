@@ -18,7 +18,9 @@ export const detectBrowser = (navigator: Navigator) => {
       let test = false;
 
       if (browser === "Chrome") {
-        test = /(Chromium\/([0-9.]+))|(Edg.*\/([0-9.]+))/.test(navigator.userAgent);
+        test = /(Chromium\/([0-9.]+))|(Edg.*\/([0-9.]+))/.test(
+          navigator.userAgent
+        );
       }
 
       if (browser === "Firefox") {
@@ -62,7 +64,7 @@ export const detectDevice = (navigator: Navigator) => {
     ["iOS", /iPhone|iPad|iPod/i],
     ["Windows", /win/i],
     ["Linux", /linux/i],
-    ["Mac OSX", /mac/i],
+    ["Mac OS", /mac/i],
   ]);
 
   for (const [platform, regex] of mobileRegexes) {

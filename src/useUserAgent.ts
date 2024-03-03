@@ -17,7 +17,11 @@ import type { Agent } from "./types";
  * -----------------------------------------------------------
  */
 export const useUserAgent = () => {
-  const [agent, setAgent] = useState<Agent>();
+  const [agent, setAgent] = useState<Agent>({
+    device: undefined,
+    browser: undefined,
+    renderingEngine: undefined,
+  });
 
   useEffect(() => {
     const navigator = window.navigator;

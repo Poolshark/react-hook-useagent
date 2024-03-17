@@ -1,6 +1,6 @@
 # React Hook User Agent
 
-Almost every React developer runs into the issue that you need to know details about the current user agent of the user who is using the application. Although it is usually best to somehow find a way to generalise your application in order to not rely on specific user agent fallbacks, sometimes there's jsut no way around it.
+Many React developers encounter the challenge of needing to access information about the current user agent of the application's user. While it's typically advisable to strive for a more generalised approach in developing your application, avoiding reliance on specific user agent fallbacks, there are instances where this is unavoidable.
 
 This React Hook gives you all the information you need, according to the current W3C standard.
 

@@ -1,5 +1,3 @@
-import { useUserAgent } from ".";
-
 export type Browsers =
   | "Chrome"
   | "Chromium"

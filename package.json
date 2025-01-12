@@ -25,15 +25,16 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "bun-types": "latest",
-    "rimraf": "^5.0.5"
+    "bun-types": "^1.1.43",
+    "rimraf": "^6.0.1"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0",
-    "react": "^18.2.0"
+    "typescript": "^5.7.3",
+    "react": "^19.0.0"
   },
   "dependencies": {
-    "@types/react": "^18.2.48"
+    "@types/react": "^19.0.4",
+    "latest": "^0.2.0"
   },
   "scripts": {
     "build": "bun build --target=node ./src/index.ts --outfile=dist/index.js --minify --external react && bun run build:declaration",

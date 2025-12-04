@@ -135,6 +135,68 @@ function MyComponent() {
 }
 ```
 
+### React Server Components (Next.js 13+ App Router)
+
+This hook is marked with `"use client"` and can only be used in Client Components. User-agent detection requires browser APIs (`navigator.userAgent`, `navigator.userAgentData`) that are only available client-side.
+
+**Usage in Next.js App Router:**
+
+```typescript
+"use client";
+
+import { useUserAgent } from "react-hook-useagent";
+
+export default function ClientComponent() {
+  const agent = useUserAgent();
+  
+  return (
+    <div>
+      <p>Browser: {agent.browser?.name}</p>
+      <p>Device: {agent.deviceType}</p>
+    </div>
+  );
+}
+```
+
+**Using in a Server Component:**
+
+If you need to use this hook within a Server Component tree, create a wrapper Client Component:
+
+```typescript
+// components/UserAgentDisplay.tsx
+"use client";
+
+import { useUserAgent } from "react-hook-useagent";
+
+export function UserAgentDisplay() {
+  const agent = useUserAgent();
+  return <div>Browser: {agent.browser?.name}</div>;
+}
+```
+
+```typescript
+// app/page.tsx (Server Component)
+import { UserAgentDisplay } from "@/components/UserAgentDisplay";
+
+export default function Page() {
+  return (
+    <div>
+      <h1>My Server Component</h1>
+      <UserAgentDisplay />
+    </div>
+  );
+}
+```
+
+**Why Client-Only?**
+
+User-agent detection is inherently client-side because:
+- Browser information only exists in the browser environment
+- `navigator` APIs are not available on the server
+- React hooks (`useState`, `useEffect`) require Client Components
+
+This is standard behavior for all browser detection libraries in the React ecosystem.
+
 ## Return Values
 
 The `useUserAgent` hook returns an `Agent` object with the following structure:

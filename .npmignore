@@ -172,3 +172,20 @@ out
 
 # Finder (MacOS) folder config
 .DS_Store
+
+# Development files
+src/
+__tests__/
+*.test.ts
+*.test.tsx
+vitest.config.ts
+tsconfig.json
+tsconfig.types.json
+bun.lockb
+
+# Kiro specs
+.kiro/
+
+# Documentation
+EXAMPLES.md
+MIGRATION.md
